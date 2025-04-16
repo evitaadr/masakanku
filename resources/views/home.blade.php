@@ -1,154 +1,219 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masakanku - Catering Lezat & Terjangkau</title>
-    <style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Masakanku - Catering Lezat & Terjangkau</title>
 
-        @media (max-width: 600px) {
-            header, section {
-                padding: 40px 10px;
-            }
-            .card {
-                width: 90%;
-            }
-            nav {
-                position: static;
-                margin-top: 10px;
-            }
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
-        }
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-        body { font-family: sans-serif; margin: 0; padding: 0; }
-        header, section { padding: 60px 20px; text-align: center; }
-        header { background-color: #d35400; color: white; position: relative; }
-        nav {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-        }
-        nav a {
-            color: white;
-            margin-left: 20px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .menu, .galeri {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
-        .card {
-            width: 300px;
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #fdf3e7;
-            text-align: left;
-            transition: transform 0.2s;
-        }
-        .card:hover {
-            transform: scale(1.02);
-        }
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-        .card h3 {
-            margin-top: 0;
-            color: #d35400;
-        }
-        .card p {
-            font-size: 14px;
-            margin: 0;
-        }
-        img.galeri {
-            width: 300px;
-            border-radius: 10px;
-        }
-        h2 {
-            color: #d35400;
-        }
-        h3.subjudul {
-            width: 100%;
-            text-align: center;
-            color: #d35400;
-        }
-        @media (max-width: 768px) {
-            nav {
-                position: static;
-                text-align: center;
-                margin-top: 10px;
-            }
-            nav a {
-                display: inline-block;
-                margin: 10px;
-            }
-            .menu, .galeri {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    header {
+      background-image: url('assets/img/bg2.jfif');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      position: relative;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    nav {
+      position: absolute;
+      top: 10px;
+      right: 30px;
+      background-color: rgba(255, 255, 255, 0.3);
+      padding: 5px 10px;
+      border-radius: 5px;
+      z-index: 2;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Bagian Section Umum */
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      color: #d35400;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    /* Menu */
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      width: 150px;
+      height: 120px;
+      border-radius: 10px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card h3 {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      margin: 0;
+      background-color: rgba(255, 255, 255, 0.7);
+      color: #d35400;
+      font-size: 14px;
+      padding: 5px 0;
+    }
+
+    .card h3 a {
+      color: #d35400;
+      text-decoration: none;
+    }
+
+    /* Galeri */
+    #galeri {
+      background-color: #f9f9f9;
+      padding-bottom: 80px;
+    }
+
+    .galeri-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .galeri-grid img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .galeri-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu {
+        flex-wrap: wrap;
+      }
+
+      .card {
+        width: 45%;
+        margin-bottom: 15px;
+      }
+
+      nav {
+        position: static;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px;
+      }
+    }
+  </style>
+
 </head>
 <body>
 
-<header>
-    <nav>
-        <a href="#tentang">Tentang Kami</a>
-        <a href="/menu">Menu/Paket</a>
-        <a href="#galeri">Galeri</a>
-    </nav>
-    <h1>Selamat Datang di Masakanku</h1>
-    <p>Catering Rumahan Lezat & Terjangkau</p>
-</header>
-
-<section id="tentang">
-    <h2>Tentang Kami</h2>
-    <p>Masakanku adalah layanan catering rumahan yang mengutamakan cita rasa, kebersihan, dan kepuasan pelanggan. Cocok untuk acara keluarga, kantor, dan harian.</p>
-</section>
+    <header>
+        <nav>
+          <a href="#tentang">Tentang Kami</a>
+          <a href="/menu">Menu/Paket</a>
+          <a href="#galeri">Galeri</a>
+        </nav>
+        <div class="header-content">
+          <h1>Selamat Datang di Masakanku</h1>
+          <p>Catering Rumahan Lezat & Terjangkau</p>
+        </div>
+      </header>
 
 <section id="menu">
-    <h2>Menu & Paket</h2>
-    <div class="menu">
-        <div class="card">
-            <img src="assets/img/nasi-kotak.jpg" alt="Nasi Kotak">
-            <h3><a href="/menu#nasi-kotak" style="color: #d35400; text-decoration: none;">Nasi Kotak</a></h3>
-            <p>Paket nasi kotak praktis dan lezat untuk segala acara.</p>
-        </div>
-        <div class="card">
-            <img src="assets/img/tumpeng.jpg" alt="Tumpeng">
-            <h3><a href="/menu#tumpeng" style="color: #d35400; text-decoration: none;">Tumpeng</a></h3>
-            <p>Tumpeng tradisional untuk perayaan spesial Anda.</p>
-        </div>
-        <div class="card">
-            <img src="assets/img/aqiqah.jpg" alt="Aqiqah">
-            <h3><a href="/menu#aqiqah" style="color: #d35400; text-decoration: none;">Aqiqah</a></h3>
-            <p>Paket aqiqah siap santap lengkap dan higienis.</p>
-        </div>
+  <h2>Menu & Paket</h2>
+  <div class="menu">
+    <div class="card" style="background-image: url('assets/img/NK1.jpeg');">
+      <h3><a href="/menu#nasi-kotak">Nasi Kotak</a></h3>
     </div>
+    <div class="card" style="background-image: url('assets/img/NK3.jpeg');">
+      <h3><a href="/menu#nasi-kotak">Nasi Kuning</a></h3>
+    </div>
+    <div class="card" style="background-image: url('assets/img/geprek1.jpeg');">
+      <h3><a href="/menu#geprek">Nasi Geprek</a></h3>
+    </div>
+    <div class="card" style="background-image: url('assets/img/TP1.jpeg');">
+      <h3><a href="/menu#tumpeng">Tumpeng</a></h3>
+    </div>
+    <div class="card" style="background-image: url('assets/img/aqiqah.jpg');">
+      <h3><a href="/menu#aqiqah">Aqiqah</a></h3>
+    </div>
+  </div>
+</section>
+
+<section id="tentang">
+  <h2>Tentang Kami</h2>
+  <p>Masakanku adalah layanan catering rumahan yang mengutamakan cita rasa, kebersihan, dan kepuasan pelanggan. Cocok untuk acara keluarga, kantor, dan harian.</p>
 </section>
 
 <section id="galeri">
     <h2>Galeri</h2>
-    <div class="galeri">
-        <img class="galeri" src="https://via.placeholder.com/300x200" alt="Galeri 1">
-        <img class="galeri" src="https://via.placeholder.com/300x200" alt="Galeri 2">
-        <img class="galeri" src="https://via.placeholder.com/300x200" alt="Galeri 3">
+    <div class="galeri-grid">
+      <img src="assets/img/g1.jfif" alt="Galeri 1">
+      <img src="assets/img/g2.jfif" alt="Galeri 2">
+      <img src="assets/img/g3.jfif" alt="Galeri 3">
+      <img src="assets/img/g4.jfif" alt="Galeri 4">
     </div>
-</section>
+  </section>
 
 </body>
 </html>
