@@ -194,7 +194,10 @@
     <div class="card" style="background-image: url('assets/img/TP1.jpeg');">
       <h3><a href="/menu#tumpeng">Tumpeng</a></h3>
     </div>
+
     <div class="card" style="background-image: url('assets/img/aqiqah.jpg');">
+
+    <div class="card" style="background-image: url('assets/img/AQ1.jfif');">
       <h3><a href="/menu#aqiqah">Aqiqah</a></h3>
     </div>
   </div>
