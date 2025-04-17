@@ -303,23 +303,33 @@
         width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
-    <div style="flex: 1; min-width: 300px; padding: 20px; color: white;">
-      <img src="assets/img/logo_pangeran.png" alt="Logo Masakanku" style="height: 60px; margin-bottom: 15px;">
-      <p style="line-height: 1.6; color: white;">
+
+    <div style="flex: 1; min-width: 100px; padding: 20px; color: white;">
+      <!-- Logo dan tulisan Masakanku -->
+      <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <img src="assets/img/logo.png" alt="Logo Masakanku"
+             style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; pointer-events: none; margin-right: 10px;">
+        <h3 style="margin: 0; font-size: 20px;">Masakanku</h3>
+      </div>
+
+      <!-- Alamat di bawah logo -->
+      <p style="line-height: 1.6; color: white; margin-bottom: 15px;">
         Dsn. Siderejo Ds. Gentong RT 05/RW 05,<br/>
         Kecamatan Paron, Kabupaten Ngawi<br/>
       </p>
+
       <p style="margin: 15px 0; font-weight: bold; color: white;">
         +6281574900322
       </p>
-      <div style="display: flex; gap: 15px; margin-top: 15px;">
+
+      {{-- <div style="display: flex; gap: 15px; margin-top: 15px;">
         <a href="#"><img src="assets/img/ig.png" alt="Instagram" style="width: 32px;"></a>
         <a href="#"><img src="assets/img/fb.png" alt="Facebook" style="width: 32px;"></a>
         <a href="#"><img src="assets/img/tiktok.png" alt="TikTok" style="width: 32px;"></a>
-      </div>
+      </div> --}}
+
       <p style="margin-top: 20px; font-size: 14px; color: white;">© 2025 by Masakanku</p>
     </div>
   </section>
-
 </body>
 </html>
