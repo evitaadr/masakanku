@@ -2,6 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu & Paket - Masakanku</title>
     <style>
         body { font-family: sans-serif; margin: 0; padding: 0; }
@@ -37,7 +38,6 @@
             position: absolute;
             top: 10px;
             right: 30px;
-            background-color: rgba(255, 255, 255, 0.3);
             padding: 5px 10px;
             border-radius: 5px;
             z-index: 2;
@@ -52,7 +52,7 @@
         }
 
         nav a:hover {
-            text-decoration: underline;
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .section-buttons {
@@ -66,6 +66,15 @@
             margin: 5px;
             border-radius: 5px;
             text-decoration: none;
+        }
+
+        .section-buttons a:hover {
+            background-color: rgba(230, 126, 34, 0.7);
+            transition: background-color 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         h2 {
@@ -85,7 +94,8 @@
         }
 
         .card {
-            width: 300px;
+            flex: 1 1 300px;
+            max-width: 320px;
             border: 1px solid #ccc;
             padding: 20px;
             border-radius: 10px;
@@ -111,32 +121,49 @@
             margin: 0;
         }
 
+        .harga {
+            font-size: 13px;
+            color: #555;
+            font-style: italic;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .harga::before {
+            content: "\1F4B8";
+        }
+
         @media (max-width: 768px) {
-            .card { width: 100%; }
             nav {
                 position: static;
-                margin-top: 10px;
                 text-align: center;
+                margin-top: 10px;
             }
             nav a {
                 display: inline-block;
                 margin: 10px;
             }
+
+            .menu-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                max-width: 90%;
+            }
         }
 
-        .harga {
-    font-size: 13px;
-    color: #555;
-    font-style: italic;
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-.harga::before {
-    content: "💸";
-}
-
+        @media (max-width: 480px) {
+            .section-buttons a {
+                display: block;
+                margin: 10px auto;
+                width: 80%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -144,6 +171,8 @@
 <header>
     <nav>
         <a href="/">Home</a>
+        {{-- <a href="/menu">Menu/Paket</a>
+        <a href="#galeri">Galeri</a> --}}
         <a href="/menu#nasi-kotak">Nasi Kotak</a>
         <a href="/menu#tumpeng">Tumpeng</a>
         <a href="/menu#aqiqah">Aqiqah</a>
@@ -243,22 +272,54 @@
     </div>
 </section>
 
-
 <section id="aqiqah" class="menu-section">
     <h2>Aqiqah</h2>
     <div class="menu-grid">
         <div class="card">
-            <img src="https://via.placeholder.com/300x180" alt="Aqiqah A">
+            <img src='assets/img/AQ2.jfif' alt="Aqiqah A">
             <h3>Paket A</h3>
-            <p>Nasi box, gulai kambing, sate, acar, kerupuk</p>
+            <p>Nasi, sate, acar, mie, telur, oseng-oseng buncis, buah</p>
+            <p class="harga">Rp 40.000</p>
         </div>
         <div class="card">
-            <img src="https://via.placeholder.com/300x180" alt="Aqiqah B">
+            <img src='assets/img/AQ1.jfif' alt="Aqiqah B">
             <h3>Paket B</h3>
-            <p>Nasi box, rendang kambing, sambal goreng, kerupuk, buah</p>
+            <p>Nasi box, gulai kambing, sate, rica rica kulit, sambel kentang</p>
+            <p class="harga">Rp 45.000</p>
+        </div>
+        <div class="card">
+            <img src='assets/img/AQ3.jfif' alt="Aqiqah C">
+            <h3>Paket C</h3>
+            <p>Nasi, daging, gulai, sambal, puding, krupuk, buah </p>
+            <p class="harga">Rp 50.000</p>
         </div>
     </div>
 </section>
+
+<section style="background-color: #7B2F1B; color: white; display: flex; flex-wrap: wrap; justify-content: center; padding: 40px 20px;">
+    <div style="flex: 1; min-width: 300px; max-width: 600px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3955.842591880243!2d111.32910207500188!3d-7.482627592529346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMjgnNTcuNSJTIDExMcKwMTknNTQuMCJF!5e0!3m2!1sen!2sid!4v1744877729468!5m2!1sen!2sid"
+        width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <div style="flex: 1; min-width: 300px; padding: 20px; color: white;">
+      <img src="assets/img/logo_pangeran.png" alt="Logo Masakanku" style="height: 60px; margin-bottom: 15px;">
+      <p style="line-height: 1.6; color: white;">
+        Dsn. Siderejo Ds. Gentong RT 05/RW 05,<br/>
+        Kecamatan Paron, Kabupaten Ngawi<br/>
+      </p>
+      <p style="margin: 15px 0; font-weight: bold; color: white;">
+        +6281574900322
+      </p>
+      <div style="display: flex; gap: 15px; margin-top: 15px;">
+        <a href="#"><img src="assets/img/ig.png" alt="Instagram" style="width: 32px;"></a>
+        <a href="#"><img src="assets/img/fb.png" alt="Facebook" style="width: 32px;"></a>
+        <a href="#"><img src="assets/img/tiktok.png" alt="TikTok" style="width: 32px;"></a>
+      </div>
+      <p style="margin-top: 20px; font-size: 14px; color: white;">© 2025 by Masakanku</p>
+    </div>
+  </section>
 
 </body>
 </html>
