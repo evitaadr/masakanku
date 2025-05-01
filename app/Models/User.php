@@ -11,25 +11,52 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;   // ‼️ tambahkan HasApiTokens
 
-    /** @var list<string> */
+    use HasApiTokens, HasFactory, Notifiable;
+
+    protected $primaryKey = 'id_user';
+
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'email_user',
+        'username_user',
+        'password_user',
     ];
 
-    /** @var list<string> */
     protected $hidden = [
-        'password',
+        'password_user',
         'remember_token',
     ];
 
-    /** @return array<string,string> */
-    protected function casts(): array
+    // Password mutator
+    public function setPasswordUserAttribute($value)
     {
-        return [
-            'email_verified_at' => 'datetime',
-            'password'          => 'hashed',
-        ];
+        $this->attributes['password_user'] = bcrypt($value);
     }
+
+    // Get password for auth
+    public function getAuthPassword()
+    {
+        return $this->password_user;
+    }
+
+    /** @var list<string> */
+//     protected $fillable = [
+//         'name',
+//         'email',
+//         'password',
+//     ];
+
+//     /** @var list<string> */
+//     protected $hidden = [
+//         'password',
+//         'remember_token',
+//     ];
+
+//     /** @return array<string,string> */
+//     protected function casts(): array
+//     {
+//         return [
+//             'email_verified_at' => 'datetime',
+//             'password'          => 'hashed',
+//         ];
+//     }
 }
