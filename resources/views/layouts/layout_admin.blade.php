@@ -63,7 +63,7 @@
                         </a>
                     </li>
                     <li class="nav-item mt-5">
-                        <form action="{{ route('logout') }}" method="POST">
+                        <form id="logoutForm" action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-danger w-100">
                                 <i class="fas fa-sign-out-alt me-2"></i> Logout
@@ -96,6 +96,14 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    document.getElementById('logoutForm').addEventListener('submit', function(e) {
+        const confirmLogout = confirm('Konfirmasi logout?');
+        if (!confirmLogout) {
+            e.preventDefault();
+        }
+    });
+    </script>
     @yield('scripts')
 </body>
 </html>
