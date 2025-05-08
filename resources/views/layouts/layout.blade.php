@@ -91,7 +91,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <a href="#" class="footer-logo">MASAKANKU</a>
-                    <p class="footer-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elementum augue ut ligula pellentesque, at faucibus ex dignissim.</p>
+                    <p class="footer-text">Layanan catering rumahan dari Masakanku dirancang untuk memenuhi kebutuhan makan harian yang praktis dan terjangkau. Pilihan tepat bagi keluarga, pekerja, maupun pelajar yang menginginkan masakan bergizi dan siap saji dengan rasa yang akrab di lidah.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
