@@ -63,6 +63,11 @@
                             <i class="fas fa-images me-2"></i> Gallery
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ route('users.index') }}">
+                            <i class="fas fa-users me-2"></i> Users
+                        </a>
+                    </li>
                     <li class="nav-item mt-5">
                         <form id="logoutForm" action="{{ route('logout') }}" method="POST">
                             @csrf
