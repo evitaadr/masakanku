@@ -21,7 +21,6 @@
             background-color: var(--light-bg);
         }
 
-
         /* Hero Section */
         .hero-section {
             padding: 70px 0 50px;
@@ -34,7 +33,6 @@
             font-weight: 800;
             margin-bottom: 0;
             color: var(--primary-color);
-            /* color: #5aeef3; */
             line-height: 1;
         }
 
@@ -91,98 +89,50 @@
             border-radius: 50px;
             font-weight: 600;
             margin-top: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .location-badge:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .location-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 0, 57, 0.3);
+        }
+
+        .location-badge:hover:before {
+            left: 100%;
+        }
+
+        .location-badge:hover i {
+            animation: bounce 0.8s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
         }
 
         .location-badge i {
             margin-right: 5px;
-        }
-
-        /* Restaurant Section */
-        .restaurant-section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            position: relative;
-            margin-bottom: 40px;
-        }
-
-        .section-title h2 {
-            font-weight: 700;
-            color: var(--dark-text);
-            margin-bottom: 20px;
-            padding-left: 20px;
-            border-left: 5px solid var(--primary-color);
-        }
-
-        .restaurant-card {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            background-color: white;
-            height: 100%;
-        }
-
-        .restaurant-img {
-            height: 250px;
-            overflow: hidden;
-        }
-
-        .restaurant-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .restaurant-card:hover .restaurant-img img {
-            transform: scale(1.05);
-        }
-
-        .restaurant-info {
-            padding: 20px;
-            position: relative;
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .restaurant-info h3 {
-            font-weight: 700;
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .restaurant-info p {
-            margin-bottom: 15px;
-            opacity: 0.9;
-            font-size: 14px;
-        }
-
-        .location-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .location-info i {
-            margin-right: 10px;
-        }
-
-        .btn-book {
-            background-color: white;
-            color: var(--primary-color);
-            border: none;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 14px;
             transition: all 0.3s ease;
-        }
-
-        .btn-book:hover {
-            background-color: #f8f8f8;
-            transform: translateY(-2px);
         }
 
         /* Food Menu Section */
@@ -300,84 +250,6 @@
             font-size: 40px;
         }
 
-        /* Footer */
-        footer {
-            background-color: #222;
-            color: white;
-            padding: 80px 0 30px;
-        }
-
-        .footer-logo {
-            font-size: 32px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        .footer-text {
-            margin-bottom: 30px;
-            color: #ccc;
-        }
-
-        .footer-links h4 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        .footer-links ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links ul li a {
-            color: #ccc;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links ul li a:hover {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .social-links {
-            margin-top: 30px;
-        }
-
-        .social-links a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: #333;
-            border-radius: 50%;
-            margin-right: 10px;
-            color: white;
-            text-align: center;
-            line-height: 40px;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            text-align: center;
-            color: #aaa;
-            font-size: 14px;
-        }
-
         /* Responsive Styles */
         @media (max-width: 991px) {
             .hero-text h1 {
@@ -419,18 +291,6 @@
             .hero-image {
                 margin-top: 40px;
             }
-
-            .section-title {
-                text-align: center;
-            }
-
-            .section-title h2 {
-                border-left: none;
-                padding-left: 0;
-                border-bottom: 3px solid var(--primary-color);
-                padding-bottom: 10px;
-                display: inline-block;
-            }
         }
 
         @media (max-width: 575px) {
@@ -449,20 +309,22 @@
     </style>
 </section>
 
-
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 hero-text">
                     <h1>MASAKANKU</h1>
-                    <h2>Discover Restaurant<br>& Delicious Food</h2>
+                    {{-- <h2>Discover Restaurant<br>& Delicious Food</h2> --}}
+                    <h2>Homestyle Catering<br>with a Special Touch</h2>
                     <div class="search-box">
-                        <input type="text" placeholder="Search Restaurant, Food">
+                        <input type="text" placeholder="Search for orders, Food">
                         <button class="search-btn">GO</button>
                     </div>
                     <div class="location-badge">
-                        <i class="fas fa-map-marker-alt"></i> Lokasi
+                        <a class="text-decoration-none text-white" href="https://www.google.com/maps?q=-7.4826275,111.3291020" target="_blank">
+                            <i class="fas fa-map-marker-alt"></i> Lokasi
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-6 hero-image">
@@ -472,53 +334,10 @@
         </div>
     </section>
 
-    <!-- Restaurant Section -->
-    <section class="restaurant-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Some Top Restaurant For<br>Dining In Or Take Away!</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="restaurant-card">
-                        <div class="restaurant-img">
-                            <img src="/api/placeholder/500/300" alt="Fire Water">
-                        </div>
-                        <div class="restaurant-info">
-                            <h3>Fire Water</h3>
-                            <p>We Are All About Our Food Quality In The Most Careful Details of Preparation Using The Best Ingredients Out There</p>
-                            <div class="location-info">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Green Road</span>
-                            </div>
-                            <button class="btn-book">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="restaurant-card">
-                        <div class="restaurant-img">
-                            <img src="/api/placeholder/500/300" alt="The Wonton">
-                        </div>
-                        <div class="restaurant-info">
-                            <h3>The Wonton</h3>
-                            <p>We Are All About Our Food Quality In The Most Careful Details of Preparation Using The Best Ingredients Out There</p>
-                            <div class="location-info">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Gulshan Road</span>
-                            </div>
-                            <button class="btn-book">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Food Menu Section -->
     <section class="menu-section" id="menu">
         <div class="container">
-            <h2>Explore Our Foods</h2>
+            <h2>Menu Favorit</h2>
             <div class="row">
                 @foreach($menus as $menu)
                 <div class="col-md-4 col-sm-6">

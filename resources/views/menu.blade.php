@@ -323,83 +323,7 @@
             background-color: #222;
         }
 
-        /* Footer */
-        footer {
-            background-color: #222;
-            color: white;
-            padding: 80px 0 30px;
-        }
 
-        .footer-logo {
-            font-size: 32px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        .footer-text {
-            margin-bottom: 30px;
-            color: #ccc;
-        }
-
-        .footer-links h4 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        .footer-links ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links ul li a {
-            color: #ccc;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links ul li a:hover {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .social-links {
-            margin-top: 30px;
-        }
-
-        .social-links a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: #333;
-            border-radius: 50%;
-            margin-right: 10px;
-            color: white;
-            text-align: center;
-            line-height: 40px;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            text-align: center;
-            color: #aaa;
-            font-size: 14px;
-        }
 
         /* Animation for cards */
         @keyframes fadeIn {
@@ -591,5 +515,4 @@
         });
     </script>
 </section>
-
 @endsection
