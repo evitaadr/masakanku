@@ -20,10 +20,10 @@
                 <p class="card-text">{{ $galeri->description_galeri }}</p>
             </div>
             <div class="card-footer d-flex justify-content-between">
-                <a href="{{ route('galeris.edit', $galeri->id) }}" class="btn btn-sm btn-info">
+                <a href="{{ route('galeris.edit', $galeri->id_galeri) }}" class="btn btn-sm btn-info">
                     <i class="fas fa-edit"></i>
                 </a>
-                <form action="{{ route('galeris.destroy', $galeri->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus galeri ini?')">
+                <form action="{{ route('galeris.destroy', $galeri->id_galeri) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus galeri ini?')">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-sm btn-danger" type="submit">

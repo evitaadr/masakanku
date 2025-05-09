@@ -6,7 +6,7 @@
 @section('content')
 <div class="card shadow-sm">
     <div class="card-body">
-        <form action="{{ route('galeris.update', $galeri->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('galeris.update', $galeri->id_galeri) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
