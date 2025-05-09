@@ -14,6 +14,7 @@
         .sidebar {
             height: 100vh;
             position: fixed;
+            background: #450f0f;
         }
         .main-content {
             margin-left: 16.6667%; /* offset sidebar width (col-2) */
@@ -37,7 +38,7 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
-            <nav id="sidebar" class="col-md-2 d-md-block bg-dark sidebar text-white p-3">
+            <nav id="sidebar" class="col-md-2 d-md-block sidebar text-white p-3">
                 <div class="text-center mb-4">
                     <h4 class="text-white">Restaurant Admin</h4>
                 </div>

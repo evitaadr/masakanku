@@ -21,7 +21,7 @@
         }
 
 
-        /* Hero Menu Section */
+        /* Hero Menu Section
         .hero-menu {
             background-color: var(--primary-color);
             padding: 120px 0 80px;
@@ -40,6 +40,30 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             transform: translate(100px, -150px);
+        } */
+
+        /* Hero Menu Section with Background Image */
+        .hero-menu {
+            padding: 120px 0 80px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            background-image: url('{{ asset('assets/img/3e2b7ff98d7f0d2830da0d134bbe5809.jpg') }}'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Add dark overlay for better text readability */
+        .hero-menu::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+            z-index: 1;
         }
 
         .hero-menu::after {
@@ -54,7 +78,7 @@
             transform: translate(-100px, 100px);
         }
 
-        .hero-menu h1 {
+        /* .hero-menu h1 {
             font-size: 50px;
             font-weight: 800;
             margin-bottom: 20px;
@@ -69,6 +93,26 @@
             opacity: 0.9;
             position: relative;
             z-index: 1;
+        } */
+
+        .hero-menu .container {
+            position: relative;
+            z-index: 2; /* Place content above the overlay */
+        }
+
+        .hero-menu h1 {
+            font-size: 50px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+        }
+
+        .hero-menu p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
         }
 
         /* Categories Section */
@@ -422,7 +466,7 @@
     </style>
 
 <section>
-    <!-- Hero Menu Section -->
+    <!-- Hero Menu Section with Background Image -->
     <section class="hero-menu text-center">
         <div class="container">
             <h1>Our Delicious Menu</h1>
@@ -464,7 +508,7 @@
                             <h3>{{ $menu->name_menu }}</h3>
                             <div class="food-price">{{ $menu->price_menu }}</div>
                             <p class="food-description">{{ $menu->description_menu }}</p>
-                            <a href="#" class="btn-order">Order Now</a>
+                            <a href="https://wa.me/+6285656829503" target="_blank" class="btn-order">Order Now</a>
                         </div>
                     </div>
                 </div>
