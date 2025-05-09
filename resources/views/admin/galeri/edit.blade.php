@@ -6,12 +6,16 @@
 @section('content')
 <div class="card shadow-sm">
     <div class="card-body">
+<<<<<<< HEAD
         <form action="{{ route('galeris.update', $galeri->id_galeri) }}" method="POST" enctype="multipart/form-data">
+=======
+        <form action="{{ route('galeris.update', $galeri) }}" method="POST" enctype="multipart/form-data">
+>>>>>>> 84516d14e2b2367e4c6c79ce19b2b71b81f8f584
             @csrf
             @method('PUT')
 
             <div class="mb-3">
-                <label for="name_galeri" class="form-label">Nama Galeri</label>
+                <label for="name_galeri" class="form-label">Judul Foto</label>
                 <input type="text" class="form-control @error('name_galeri') is-invalid @enderror" id="name_galeri" name="name_galeri" value="{{ old('name_galeri', $galeri->name_galeri) }}" required>
                 @error('name_galeri')
                     <div class="invalid-feedback">{{ $message }}</div>

@@ -21,26 +21,27 @@ class AuthController extends Controller
             'email_user' => 'required|email',
             'password_user' => 'required',
         ]);
-
-        $credentials = [
-            'email_user' => $request->email_user,
-            'password_user' => $request->password_user,
-        ];
-
-        $user = User::where('email_user', $credentials['email_user'])->first();
-
-        if ($user && Hash::check($credentials['password_user'], $user->password_user)) {
-            Auth::login($user);
-            $request->session()->regenerate();
-            return redirect()->intended('/admin/dashboard');
+    
+        // Super Admin Hardcoded
+        $superAdminEmail = 'admin@example.com';
+        $superAdminPassword = 'supersecurepassword';
+    
+        $user = User::where('email_user', $request->email_user)->first();
+    
+        if ($request->email_user === $superAdminEmail && $request->password_user === $superAdminPassword) {
+            $user = User::where('email_user', $superAdminEmail)->first();
+            if ($user) {
+                Auth::login($user);
+                $request->session()->regenerate();
+                return redirect()->intended('/admin/dashboard');
+            }
         }
-
-
+    
         return back()->withErrors([
             'email_user' => 'Email atau password salah.',
         ]);
     }
-
+    
     public function showRegistrationForm()
     {
         return view('auth.register');

@@ -14,6 +14,7 @@
         .sidebar {
             height: 100vh;
             position: fixed;
+            background: #450f0f;
         }
         .main-content {
             margin-left: 16.6667%; /* offset sidebar width (col-2) */
@@ -37,7 +38,7 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
-            <nav id="sidebar" class="col-md-2 d-md-block bg-dark sidebar text-white p-3">
+            <nav id="sidebar" class="col-md-2 d-md-block sidebar text-white p-3">
                 <div class="text-center mb-4">
                     <h4 class="text-white">Restaurant Admin</h4>
                 </div>
@@ -62,8 +63,13 @@
                             <i class="fas fa-images me-2"></i> Gallery
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ route('users.index') }}">
+                            <i class="fas fa-users me-2"></i> Users
+                        </a>
+                    </li>
                     <li class="nav-item mt-5">
-                        <form action="{{ route('logout') }}" method="POST">
+                        <form id="logoutForm" action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-danger w-100">
                                 <i class="fas fa-sign-out-alt me-2"></i> Logout
@@ -96,6 +102,14 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    document.getElementById('logoutForm').addEventListener('submit', function(e) {
+        const confirmLogout = confirm('Konfirmasi logout?');
+        if (!confirmLogout) {
+            e.preventDefault();
+        }
+    });
+    </script>
     @yield('scripts')
 </body>
 </html>

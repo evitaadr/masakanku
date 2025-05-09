@@ -7,7 +7,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-4">
-        <div class="card mb-4 bg-primary text-white">
+        <div class="card mb-4 text-white" style="background-color: #963d20;">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card-footer d-flex justify-content-between align-items-center">
+            <div class="card-footer d-flex justify-content-between align-items-center text-white">
                 <span>View Details</span>
                 <a href="{{ route('categories.index') }}" class="text-white">
                     <i class="fas fa-arrow-circle-right"></i>
@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="col-md-4">
-        <div class="card mb-4 bg-success text-white">
+        <div class="card mb-4 text-white" style="background-color: #d32f2f;">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card-footer d-flex justify-content-between align-items-center">
+            <div class="card-footer d-flex justify-content-between align-items-center text-white">
                 <span>View Details</span>
                 <a href="{{ route('menus.index') }}" class="text-white">
                     <i class="fas fa-arrow-circle-right"></i>
@@ -49,7 +49,7 @@
         </div>
     </div>
     <div class="col-md-4">
-        <div class="card mb-4 bg-info text-white">
+        <div class="card mb-4 text-white" style="background-color: #d3582f;">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card-footer d-flex justify-content-between align-items-center">
+            <div class="card-footer d-flex justify-content-between align-items-center text-white">
                 <span>View Details</span>
                 <a href="{{ route('galeris.index') }}" class="text-white">
                     <i class="fas fa-arrow-circle-right"></i>

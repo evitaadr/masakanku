@@ -12,7 +12,7 @@
             @method('PUT')
 
             <div class="mb-3">
-                <label for="name_menu" class="form-label">Menu Name</label>
+                <label for="name_menu" class="form-label">Nama Menu</label>
                 <input type="text" class="form-control @error('name_menu') is-invalid @enderror" id="name_menu" name="name_menu" value="{{ old('name_menu', $menu->name_menu) }}" required>
                 @error('name_menu')
                     <div class="invalid-feedback">{{ $message }}</div>
@@ -20,7 +20,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="price_menu" class="form-label">Price</label>
+                <label for="price_menu" class="form-label">Harga</label>
                 <input type="text" class="form-control @error('price_menu') is-invalid @enderror" id="price_menu" name="price_menu" value="{{ old('price_menu', $menu->price_menu) }}" required>
                 @error('price_menu')
                     <div class="invalid-feedback">{{ $message }}</div>
@@ -28,7 +28,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="description_menu" class="form-label">Description</label>
+                <label for="description_menu" class="form-label">Deskripsi</label>
                 <textarea class="form-control @error('description_menu') is-invalid @enderror" id="description_menu" name="description_menu" rows="4" required>{{ old('description_menu', $menu->description_menu) }}</textarea>
                 @error('description_menu')
                     <div class="invalid-feedback">{{ $message }}</div>
@@ -36,7 +36,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="image_menu" class="form-label">Image</label>
+                <label for="image_menu" class="form-label">Gambar</label>
                 <div class="mb-2">
                     <img src="{{ asset('storage/' . $menu->image_menu) }}" alt="{{ $menu->name_menu }}" class="img-thumbnail" width="200">
                 </div>
@@ -48,7 +48,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="id_categories" class="form-label">Category</label>
+                <label for="id_categories" class="form-label">Kategori</label>
                 <select class="form-select @error('id_categories') is-invalid @enderror" id="id_categories" name="id_categories" required>
                     <option value="">Select Category</option>
                     @foreach($categories as $category)

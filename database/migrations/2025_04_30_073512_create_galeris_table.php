@@ -15,7 +15,11 @@ return new class extends Migration
             $table->id('id_galeri');
             $table->string('name_galeri');
             $table->string('description_galeri');
+<<<<<<< HEAD
             $table->string('image_galeri'); // tambahkan ini
+=======
+            $table->string('image_galeri', 255)->nullable();
+>>>>>>> 84516d14e2b2367e4c6c79ce19b2b71b81f8f584
             $table->timestamps();
         });
 

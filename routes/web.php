@@ -14,7 +14,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GaleriController;
-
+use App\Http\Controllers\UserController;
 
 // Public routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -41,6 +41,9 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
     // Galeri management
     Route::resource('galeris', GaleriController::class);
+
+    // Users management
+    Route::resource('users', UserController::class)->except(['show']);
 });
 
 // Route::get('/', fn () => view('home')); // atau dashboard public
