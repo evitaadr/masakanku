@@ -357,26 +357,24 @@
         </div>
     </section>
 
-   <!-- Gallery Section -->
-   <section class="gallery-section" id="gallery">
-    <div class="container">
-        <h2>Our Food Gallery</h2>
-        <div class="row">
-            @foreach($galeris as $galeri)
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="gallery-img position-relative">
-                        <!-- Fancybox aktif saat klik gambar -->
-                        <a href="{{ asset('storage/' . $galeri->image_galeri) }}" data-fancybox="gallery" data-caption="{{ $galeri->name_galeri }} - {{ $galeri->description_galeri }}">
-                            <img src="{{ asset('storage/' . $galeri->image_galeri) }}" alt="{{ $galeri->name_galeri }}" class="img-fluid" style="height: 200px; object-fit: cover; width: 100%;">
-                        </a>
-                        <!-- Overlay efek -->
-                        <div class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
-                             style="background-color: rgba(0,0,0,0.5); opacity: 0; transition: 0.3s;">
-                            <i class="fas fa-search-plus text-white fa-2x"></i>
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2>Our Food Gallery</h2>
+            <div class="row">
+
+                    @foreach ($galeris as $galeri )
+                    <div class="col-md-4 col-sm-6">
+                        <div class="gallery-img">
+                            <img src="{{ asset('storage/' . $galeri->image_galeri) }}" alt="{{$galeri->name_galeri }}">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+
+            </div>
         </div>
     </div>
 </section>
