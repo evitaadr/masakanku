@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Restaurant')</title>
-    <!-- Bootstrap CSS ini -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS -->
     {{-- <link href="{{ asset('css/style.css') }}" rel="stylesheet"> --}}
-    <!-- Fancybox -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
     {{-- @yield('styles') --}}
     <style>
         /* Navbar Styles */
@@ -48,7 +46,6 @@
             color: var(--dark-text);
         }
 
-<<<<<<< HEAD
         /* Footer Styles */
         footer {
             background-color: #ba052c;
@@ -159,13 +156,6 @@
         .fa-solid, .fas {
             color: #fff;
         }
-=======
-        .gallery-overlay {
-        pointer-events: none;
-        }
-
-
->>>>>>> 84516d14e2b2367e4c6c79ce19b2b71b81f8f584
     </style>
 </head>
 <body>
@@ -197,18 +187,9 @@
     <footer>
         <div class="container">
             <div class="row">
-<<<<<<< HEAD
                 <div class="col-lg-6 col-md-6 location-section">
                     <div class="map-container">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3955.842591880243!2d111.32910207500188!3d-7.482627592529346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMjgnNTcuNSJTIDExMcKwMTknNTQuMCJF!5e0!3m2!1sen!2sid!4v1746689270574!5m2!1sen!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-=======
-                <div class="col-lg-4">
-                    <a href="#" class="footer-logo">MASAKANKU</a>
-                    <p class="footer-text">Layanan catering rumahan dari Masakanku dirancang untuk memenuhi kebutuhan makan harian yang praktis dan terjangkau. Pilihan tepat bagi keluarga, pekerja, maupun pelajar yang menginginkan masakan bergizi dan siap saji dengan rasa yang akrab di lidah.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
->>>>>>> 84516d14e2b2367e4c6c79ce19b2b71b81f8f584
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -270,7 +251,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<<<<<<< HEAD
     <!-- Navigation scroll effect -->
     <script>
         window.addEventListener('scroll', function() {
@@ -280,15 +260,6 @@
             } else {
                 navbar.classList.remove('navbar-scrolled');
             }
-=======
-    <!-- Fancybox JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-    <script>
-        // Inisialisasi Fancybox
-        Fancybox.bind('[data-fancybox="gallery"]', {
-            Thumbs: false,
-            Toolbar: true,
->>>>>>> 84516d14e2b2367e4c6c79ce19b2b71b81f8f584
         });
     </script>
     @yield('scripts')
