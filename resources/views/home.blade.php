@@ -362,7 +362,6 @@
         <div class="container">
             <h2>Our Food Gallery</h2>
             <div class="row">
-
                     @foreach ($galeris as $galeri )
                     <div class="col-md-4 col-sm-6">
                         <div class="gallery-img">
@@ -373,7 +372,6 @@
                         </div>
                     </div>
                 @endforeach
-
             </div>
         </div>
     </div>
