@@ -23,7 +23,7 @@ class AuthController extends Controller
         ]);
 
         // Super Admin Hardcoded
-        $superAdminEmail = 'aprilisarah4@gmail.com';
+        $superAdminEmail = 'aprilisarahma4@gmail.com';
         $superAdminPassword = 'aprilisarah2025';
 
         if ($request->email_user === $superAdminEmail && $request->password_user === $superAdminPassword) {
