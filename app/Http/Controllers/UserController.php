@@ -20,45 +20,44 @@ class UserController extends Controller
     }
 
     public function store(Request $request)
-{
-    $request->validate([
-        'name' => 'required',
-        'email' => 'required|email|unique:users,email',
-        'password' => 'required|min:8',
-        'role' => 'required',
-    ]);
+    {
+        $request->validate([
+            'username_user' => 'required',
+            'email_user' => 'required|email|unique:users,email_user',
+            'password_user' => 'required|min:8',
+            'role_user' => 'required|in:admin,staff',
+        ]);
 
-    User::create([
-        'name' => $request->name,
-        'email' => $request->email,
-        'password' => Hash::make($request->password), // enkripsi password
-        'role' => $request->role,
-    ]);
+        User::create([
+            'username_user' => $request->username_user,
+            'email_user' => $request->email_user,
+            'password_user' => $request->password_user, // mutator akan hash otomatis
+            'role_user' => $request->role_user,
+        ]);
 
-    return redirect()->route('users.index')->with('success', 'User berhasil ditambahkan.');
-}
-
-public function update(Request $request, User $user)
-{
-    $request->validate([
-        'name' => 'required',
-        'email' => 'required|email|unique:users,email,' . $user->id,
-        'role' => 'required',
-        'password' => 'nullable|min:8',
-    ]);
-
-    $user->name = $request->name;
-    $user->email = $request->email;
-    $user->role = $request->role;
-
-    if ($request->filled('password')) {
-        $user->password = Hash::make($request->password); // enkripsi jika ada
+        return redirect()->route('users.index')->with('success', 'User berhasil ditambahkan.');
     }
 
-    $user->save();
+    public function update(Request $request, User $user)
+    {
+        $request->validate([
+            'username_user' => 'required',
+            'email_user' => 'required|email|unique:users,email_user,' . $user->id_user . ',id_user',
+            'role_user' => 'required|in:admin,staff',
+            'password_user' => 'nullable|min:8',
+        ]);
 
-    return redirect()->route('users.index')->with('success', 'User berhasil diperbarui.');
-}
+        $user->username_user = $request->username_user;
+        $user->email_user = $request->email_user;
+        $user->role_user = $request->role_user;
+        if ($request->filled('password_user')) {
+            $user->password_user = $request->password_user; // mutator akan hash otomatis
+        }
+        $user->save();
+
+        return redirect()->route('users.index')->with('success', 'User berhasil diperbarui.');
+    }
+
     public function destroy($id)
     {
         $user = User::findOrFail($id);
@@ -66,5 +65,4 @@ public function update(Request $request, User $user)
 
         return redirect()->route('users.index')->with('success', 'User berhasil dihapus.');
     }
-
 }

@@ -8,7 +8,7 @@
 <body class="min-h-screen bg-gray-100 flex flex-col">
     <nav class="bg-white shadow">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="{{ url('/') }}" class="text-xl font-bold">Auth Demo</a>
+            <a href="{{ url('/') }}" class="text-xl font-bold">Auth Demo</a>
 
             @auth
                 <form method="POST" action="{{ route('logout') }}">
@@ -18,7 +18,7 @@
             @else
                 <div class="space-x-4">
                     <a href="{{ route('login') }}"  class="hover:underline">Login</a>
-                    <a href="{{ route('register') }}" class="hover:underline">Register</a>
+                    {{-- <a href="{{ route('register') }}" class="hover:underline">Register</a> --}}
                 </div>
             @endauth
         </div>

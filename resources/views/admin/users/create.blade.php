@@ -11,40 +11,40 @@
             @csrf
 
             <div class="mb-3">
-    <label for="name" class="form-label">Name</label>
-    <input type="text" class="form-control @error('name') is-invalid @enderror"
-           id="name" name="name" value="{{ old('name') }}" required>
-    @error('name')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
-
-<div class="mb-3">
-    <label for="email" class="form-label">Email</label>
-    <input type="email" class="form-control @error('email') is-invalid @enderror"
-           id="email" name="email" value="{{ old('email') }}" required>
-    @error('email')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
-
-<div class="mb-3">
-    <label for="password" class="form-label">Password</label>
-    <input type="password" class="form-control @error('password') is-invalid @enderror"
-           id="password" name="password" required>
-    @error('password')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
+                <label for="username_user" class="form-label">Username</label>
+                <input type="text" class="form-control @error('username_user') is-invalid @enderror"
+                       id="username_user" name="username_user" value="{{ old('username_user') }}" required>
+                @error('username_user')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
 
             <div class="mb-3">
-                <label for="role" class="form-label">Role</label>
-                <select class="form-select @error('role') is-invalid @enderror" id="role" name="role" required>
+                <label for="email_user" class="form-label">Email</label>
+                <input type="email" class="form-control @error('email_user') is-invalid @enderror"
+                       id="email_user" name="email_user" value="{{ old('email_user') }}" required>
+                @error('email_user')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                <label for="password_user" class="form-label">Password</label>
+                <input type="password" class="form-control @error('password_user') is-invalid @enderror"
+                       id="password_user" name="password_user" required>
+                @error('password_user')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                <label for="role_user" class="form-label">Role</label>
+                <select class="form-select @error('role_user') is-invalid @enderror" id="role_user" name="role_user" required>
                     <option value="">Select Role</option>
-                    <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option>
-                    <option value="staff" {{ old('role') == 'staff' ? 'selected' : '' }}>Staff</option>
+                    <option value="admin" {{ old('role_user') == 'admin' ? 'selected' : '' }}>Admin</option>
+                    <option value="staff" {{ old('role_user') == 'staff' ? 'selected' : '' }}>Staff</option>
                 </select>
-                @error('role')
+                @error('role_user')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>

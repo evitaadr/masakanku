@@ -181,24 +181,6 @@
             transform: translateY(0);
         }
 
-        .register-link {
-            text-align: center;
-            margin-top: 25px;
-            font-size: 14px;
-        }
-
-        .register-link a {
-            color: #6e8efb;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .register-link a:hover {
-            color: #a777e3;
-            text-decoration: underline;
-        }
-
         .alert {
             background-color: rgba(247, 37, 133, 0.1);
             border-left: 4px solid #f72585;
@@ -275,10 +257,6 @@
             </div>
 
             <button type="submit" class="btn">Login</button>
-
-            <div class="register-link">
-                Don't have an account? <a href="#">Register Now</a>
-            </div>
         </form>
     </div>
 </body>

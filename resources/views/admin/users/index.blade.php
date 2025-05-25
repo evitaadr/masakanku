@@ -29,8 +29,8 @@
                     <tr>
                         <td>{{ $user->id }}</td>
                         <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->role }}</td>
+                        <td>{{ $user->email_user }}</td>
+                        <td>{{ $user->role_user }}</td>
                         <td>
                             <a href="{{ route('users.edit', $user) }}" class="btn btn-sm btn-info">
                                 <i class="fas fa-edit"></i>

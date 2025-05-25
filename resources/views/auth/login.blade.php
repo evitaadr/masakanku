@@ -58,7 +58,7 @@
                         </form>
                     </div>
                     <div class="card-footer text-center bg-light border-top-0">
-                        <p class="mb-0">Belum punya akun? <a href="{{ route('register') }}" class="text-decoration-none" style="color: #ff0039;">Daftar</a></p>
+                        {{-- <p class="mb-0">Belum punya akun? <a href="{{ route('register') }}" class="text-decoration-none" style="color: #ff0039;">Daftar</a></p> --}}
                     </div>
                 </div>
             </div>
