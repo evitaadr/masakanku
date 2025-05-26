@@ -195,7 +195,7 @@
             font-size: 18px;
         }
 
-        /* Gallery Section */
+        /* Gallery Section - 3 Grid Layout */
         .gallery-section {
             padding: 80px 0;
             background-color: var(--light-bg);
@@ -210,17 +210,23 @@
 
         .gallery-img {
             position: relative;
-            height: 250px;
-            margin-bottom: 30px;
-            border-radius: 10px;
+            height: 300px;
+            border-radius: 15px;
             overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-img:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
 
         .gallery-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
 
         .gallery-img:hover img {
@@ -233,12 +239,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 0, 57, 0.6);
+            background: linear-gradient(45deg, rgba(255, 0, 57, 0.8), rgba(55, 11, 100, 0.8));
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
             opacity: 0;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
 
         .gallery-img:hover .gallery-overlay {
@@ -248,6 +255,185 @@
         .gallery-overlay i {
             color: white;
             font-size: 40px;
+            margin-bottom: 15px;
+            animation: zoomIn 0.6s ease forwards;
+        }
+
+        .gallery-overlay h3 {
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+            margin: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.6s ease 0.2s forwards;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        /* Gallery Carousel Styles */
+        .gallery-carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .gallery-carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .gallery-slide {
+            min-width: 33.333%;
+            padding: 0 10px;
+            box-sizing: border-box;
+            display: flex;
+        }
+
+        .gallery-slide .gallery-img {
+            width: 100%;
+            position: relative;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-slide .gallery-img:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-slide .gallery-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-slide .gallery-img:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-slide .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 0, 57, 0.8), rgba(55, 11, 100, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-slide .gallery-img:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-slide .gallery-overlay i {
+            color: white;
+            font-size: 40px;
+            margin-bottom: 15px;
+            animation: zoomIn 0.6s ease forwards;
+        }
+
+        .gallery-slide .gallery-overlay h3 {
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+            margin: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.6s ease 0.2s forwards;
+        }
+
+        /* Navigation Buttons */
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .nav-btn {
+            background: rgba(255, 0, 57, 0.8);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            pointer-events: all;
+            font-size: 18px;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-color);
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 0, 57, 0.3);
+        }
+
+        .prev-btn {
+            margin-left: -25px;
+        }
+
+        .next-btn {
+            margin-right: -25px;
+        }
+
+        /* Carousel Indicators */
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 0, 57, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        .indicator:hover {
+            background: var(--primary-color);
+            transform: scale(1.1);
         }
 
         /* Responsive Styles */
@@ -262,6 +448,20 @@
 
             .hero-image img {
                 max-width: 100%;
+            }
+
+            .gallery-img {
+                height: 250px;
+            }
+
+            .gallery-slide .gallery-img {
+                height: 250px;
+            }
+
+            .nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
             }
         }
 
@@ -291,6 +491,32 @@
             .hero-image {
                 margin-top: 40px;
             }
+
+            .gallery-img {
+                height: 200px;
+            }
+
+            .gallery-slide {
+                min-width: 50%;
+            }
+
+            .gallery-slide .gallery-img {
+                height: 200px;
+            }
+
+            .nav-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 14px;
+            }
+
+            .prev-btn {
+                margin-left: -17px;
+            }
+
+            .next-btn {
+                margin-right: -17px;
+            }
         }
 
         @media (max-width: 575px) {
@@ -300,6 +526,14 @@
 
             .hero-text h2 {
                 font-size: 20px;
+            }
+
+            .gallery-slide {
+                min-width: 100%;
+            }
+
+            .gallery-slide .gallery-img {
+                height: 250px;
             }
         }
 
@@ -315,12 +549,11 @@
             <div class="row align-items-center">
                 <div class="col-md-6 hero-text">
                     <h1>MASAKANKU</h1>
-                    {{-- <h2>Discover Restaurant<br>& Delicious Food</h2> --}}
-                    <h2>Homestyle Catering<br>with a Special Touch</h2>
-                    <div class="search-box">
+                    <h2>Katering Rumahan<br>dengan Sentuhan Istimewa</h2>
+                    {{-- <div class="search-box">
                         <input type="text" placeholder="Search for orders, Food">
                         <button class="search-btn">GO</button>
-                    </div>
+                    </div> --}}
                     <div class="location-badge">
                         <a class="text-decoration-none text-white" href="https://www.google.com/maps?q=-7.4826275,111.3291020" target="_blank">
                             <i class="fas fa-map-marker-alt"></i> Lokasi
@@ -357,27 +590,65 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Gallery Section with Auto Slide -->
     <section class="gallery-section" id="gallery">
         <div class="container">
             <h2>Our Food Gallery</h2>
-            <div class="row">
-                    @foreach ($galeris as $galeri )
-                    <div class="col-md-4 col-sm-6">
+
+            @if($galeris->count() <= 3)
+                <!-- Static 3 Grid Layout for 3 or fewer items -->
+                <div class="row">
+                    @foreach ($galeris as $galeri)
+                    <div class="col-md-4 col-sm-6 mb-4">
                         <div class="gallery-img">
                             <img src="{{ asset('storage/' . $galeri->image_galeri) }}" alt="{{$galeri->name_galeri }}">
                             <div class="gallery-overlay">
                                 <i class="fas fa-search-plus"></i>
+                                <h3>{{$galeri->name_galeri }}</h3>
                             </div>
                         </div>
                     </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</section>
+                    @endforeach
+                </div>
+            @else
+                <!-- Auto Slide Carousel for more than 3 items -->
+                <div class="gallery-carousel-container">
+                    <div class="gallery-carousel" id="galleryCarousel">
+                        @foreach ($galeris as $index => $galeri)
+                        <div class="gallery-slide {{ $index < 3 ? 'active' : '' }}">
+                            <div class="gallery-img">
+                                <img src="{{ asset('storage/' . $galeri->image_galeri) }}" alt="{{$galeri->name_galeri }}">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                    <h3>{{$galeri->name_galeri }}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
 
-    <!-- Custom JS for Navbar -->
+                    <!-- Carousel Navigation -->
+                    <div class="carousel-nav">
+                        <button class="nav-btn prev-btn" onclick="changeSlide(-1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="nav-btn next-btn" onclick="changeSlide(1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Carousel Indicators -->
+                    <div class="carousel-indicators">
+                        @for($i = 0; $i < ceil($galeris->count() / 3); $i++)
+                        <button class="indicator {{ $i == 0 ? 'active' : '' }}" onclick="goToSlide({{ $i }})"></button>
+                        @endfor
+                    </div>
+                </div>
+            @endif
+        </div>
+    </section>
+
+    <!-- Custom JS -->
     <script>
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
@@ -391,15 +662,118 @@
             }
         });
 
+        // Rotating image on scroll
         const rotatingImage = document.querySelector('.rotate-on-scroll');
-
         window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-        // Rotasi sesuai seberapa jauh halaman discroll
-        const rotation = scrollY * 0.3; // bisa ubah 0.1 untuk kecepatan rotasi
+            const scrollY = window.scrollY;
+            const rotation = scrollY * 0.3;
+            rotatingImage.style.transform = `rotate(${rotation}deg)`;
+        });
 
-        rotatingImage.style.transform = `rotate(${rotation}deg)`;
+        // Gallery Carousel Functionality
+        let currentSlideIndex = 0;
+        const totalSlides = {{ $galeris->count() ?? 0 }};
+        let slidesPerView = getSlidesPerView();
+        const totalSlideGroups = Math.ceil(totalSlides / slidesPerView);
+        let autoSlideInterval;
+
+        function getSlidesPerView() {
+            if (window.innerWidth <= 575) return 1;
+            if (window.innerWidth <= 767) return 2;
+            return 3;
+        }
+
+        function updateCarousel() {
+            if (totalSlides <= 3) return; // Don't run carousel for 3 or fewer items
+
+            const carousel = document.getElementById('galleryCarousel');
+            const slideWidth = 100 / slidesPerView;
+            const translateX = -(currentSlideIndex * slideWidth);
+
+            if (carousel) {
+                carousel.style.transform = `translateX(${translateX}%)`;
+            }
+
+            // Update indicators
+            const indicators = document.querySelectorAll('.indicator');
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === Math.floor(currentSlideIndex / slidesPerView));
+            });
+        }
+
+        function changeSlide(direction) {
+            if (totalSlides <= 3) return;
+
+            const maxIndex = Math.max(0, totalSlides - slidesPerView);
+            currentSlideIndex += direction * slidesPerView;
+
+            if (currentSlideIndex > maxIndex) {
+                currentSlideIndex = 0; // Loop to beginning
+            } else if (currentSlideIndex < 0) {
+                currentSlideIndex = maxIndex; // Loop to end
+            }
+
+            updateCarousel();
+            resetAutoSlide();
+        }
+
+        function goToSlide(slideGroupIndex) {
+            if (totalSlides <= 3) return;
+
+            currentSlideIndex = slideGroupIndex * slidesPerView;
+            const maxIndex = Math.max(0, totalSlides - slidesPerView);
+
+            if (currentSlideIndex > maxIndex) {
+                currentSlideIndex = maxIndex;
+            }
+
+            updateCarousel();
+            resetAutoSlide();
+        }
+
+        function startAutoSlide() {
+            if (totalSlides <= 3) return;
+
+            autoSlideInterval = setInterval(() => {
+                changeSlide(1);
+            }, 4000); // Change slide every 4 seconds
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        // Handle window resize for carousel
+        window.addEventListener('resize', () => {
+            if (totalSlides > 3) {
+                slidesPerView = getSlidesPerView();
+                currentSlideIndex = 0;
+                updateCarousel();
+                resetAutoSlide();
+            }
+        });
+
+        // Initialize carousel on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            if (totalSlides > 3) {
+                slidesPerView = getSlidesPerView();
+                updateCarousel();
+                startAutoSlide();
+
+                // Pause auto-slide on hover
+                const carouselContainer = document.querySelector('.gallery-carousel-container');
+                if (carouselContainer) {
+                    carouselContainer.addEventListener('mouseenter', () => {
+                        clearInterval(autoSlideInterval);
+                    });
+
+                    carouselContainer.addEventListener('mouseleave', () => {
+                        startAutoSlide();
+                    });
+                }
+            }
         });
     </script>
-    </section>
+</section>
 @endsection

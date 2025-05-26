@@ -17,13 +17,13 @@
                 @enderror
             </div>
 
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="description_galeri" class="form-label">Deskripsi</label>
                 <textarea class="form-control @error('description_galeri') is-invalid @enderror" id="description_galeri" name="description_galeri" rows="3" required>{{ old('description_galeri') }}</textarea>
                 @error('description_galeri')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
-            </div>
+            </div> --}}
 
             <div class="mb-3">
                 <label for="image_galeri" class="form-label">Gambar</label>

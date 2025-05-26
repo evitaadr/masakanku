@@ -236,15 +236,15 @@
                     </div>
 
                 </div>
-                <div class="col-lg-2 col-md-6 text-white footer-links">
+                {{-- <div class="col-lg-2 col-md-6 text-white footer-links">
                     <h4>About Us</h4>
                     <ul>
                         <li><a href="#">Our Story</a></li>
                     </ul>
-                </div>
+                </div> --}}
             </div>
             <div class="copyright text-white">
-                <p>&copy; 2025 Expice. Masakanku.</p>
+                <p> Copyright &copy; 2025 Masakanku</p>
             </div>
         </div>
     </footer>

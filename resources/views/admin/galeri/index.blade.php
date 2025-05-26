@@ -17,7 +17,7 @@
             <img src="{{ asset('storage/' . $galeri->image_galeri) }}" class="card-img-top" alt="{{ $galeri->name_galeri }}" style="height: 200px; object-fit: cover;">
             <div class="card-body">
                 <h5 class="card-title">{{ $galeri->name_galeri }}</h5>
-                <p class="card-text">{{ $galeri->description_galeri }}</p>
+                {{-- <p class="card-text">{{ $galeri->description_galeri }}</p> --}}
             </div>
             <div class="card-footer d-flex justify-content-between">
                 <a href="{{ route('galeris.edit', $galeri->id_galeri) }}" class="btn btn-sm btn-info">
