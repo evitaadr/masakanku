@@ -593,7 +593,7 @@
     <!-- Gallery Section with Auto Slide -->
     <section class="gallery-section" id="gallery">
         <div class="container">
-            <h2>Our Food Gallery</h2>
+            <h2>Galeri Makanan</h2>
 
             @if($galeris->count() <= 3)
                 <!-- Static 3 Grid Layout for 3 or fewer items -->

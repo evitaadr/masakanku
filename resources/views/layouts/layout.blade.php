@@ -244,7 +244,7 @@
                 </div> --}}
             </div>
             <div class="copyright text-white">
-                <p> Copyright &copy; 2025 Masakanku</p>
+                <p> &copy; 2025 Masakanku</p>
             </div>
         </div>
     </footer>
