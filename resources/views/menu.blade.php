@@ -393,8 +393,8 @@
     <!-- Hero Menu Section with Background Image -->
     <section class="hero-menu text-center">
         <div class="container">
-            <h1>Our Delicious Menu</h1>
-            <p>Discover our wide variety of mouth-watering dishes prepared by our expert chefs using only the freshest ingredients. From traditional favorites to innovative creations, we have something for everyone.</p>
+            <h1>Menu Lezat Kami</h1>
+            <p>Sajian masakan rumahan dengan cita rasa otentik dan kehangatan seperti di rumah sendiri. Kami menyediakan layanan catering dengan menu sehat, lezat, dan dibuat dari bahan-bahan segar berkualitas untuk berbagai acara Anda.</p>
         </div>
     </section>
 
@@ -414,8 +414,8 @@
     <section class="menu-section">
         <div class="container">
             <div class="text-center mb-5">
-                <h2>Our Specialties</h2>
-                <p class="section-description">Experience the best of Indonesian cuisine with our carefully crafted menu items, featuring both traditional favorites and innovative creations.</p>
+                <h2>Menu Favorit kami</h2>
+                <p class="section-description">Rasakan cita rasa autentik Indonesia dalam setiap sajian kami. perpaduan sempurna antara hidangan tradisional yang menggugah selera dan kreasi modern yang unik dan menggoda.</p>
             </div>
 
             <div class="row">
