@@ -402,7 +402,7 @@
     <section class="categories-section">
         <div class="container">
             <div class="category-pills">
-                <a href="#all" class="category-pill active">All Menu</a>
+                <a href="#all" class="category-pill active">Menu Masakanku</a>
                 @foreach ($categories as $category)
                 <a href="#{{ strtolower($category->name_categories) }}" class="category-pill">{{ $category->name_categories }}</a>
                 @endforeach
@@ -414,7 +414,7 @@
     <section class="menu-section">
         <div class="container">
             <div class="text-center mb-5">
-                <h2>Menu Favorit kami</h2>
+                <h2>Menu Spesial</h2>
                 <p class="section-description">Rasakan cita rasa autentik Indonesia dalam setiap sajian kami. perpaduan sempurna antara hidangan tradisional yang menggugah selera dan kreasi modern yang unik dan menggoda.</p>
             </div>
 
@@ -439,7 +439,7 @@
                 @endforeach
             </div>
             <div class="text-center mt-4">
-                <button class="btn-order px-4 py-3">Load More</button>
+                <button class="btn-order px-4 py-3">Selengkapnya</button>
             </div>
         </div>
     </section>
